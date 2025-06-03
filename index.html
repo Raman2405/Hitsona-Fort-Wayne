@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hitsona Fort Wayne | Best Gym Near You in Fort Wayne, IN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            accent: '#ff6f61',
+            darkbg: '#000000',
+            card: 'rgba(0,0,0,0.7)',
+            muted: '#999999',
+            textLight: '#e0e0e0'
+          },
+          boxShadow: {
+            glow: '0 0 20px 4px #ff6f61cc, 0 4px 12px 0 #ff6f6155'
+          },
+          fontFamily: {
+            mont: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Montserrat', sans-serif; background-color: #000; color: #e0e0e0; }
+    .btn-glow {
+      box-shadow: 0 0 20px 4px #ff6f61cc, 0 4px 12px 0 #ff6f6155;
+      transition: box-shadow 0.3s, transform 0.3s;
+    }
+    .btn-glow:hover, .btn-glow:focus {
+      box-shadow: 0 0 40px 8px #ff6f61ff, 0 6px 16px 0 #ff6f6188;
+      transform: scale(1.1) translateY(-3px);
+    }
+    .gallery-img {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .gallery-img:hover {
+      transform: scale(1.08) rotate(-3deg);
+      box-shadow: 0 10px 40px 0 #ff6f61cc;
+      z-index: 10;
+    }
+    .bg-glass {
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 1rem;
+      box-shadow: 0 0 20px 0 #ff6f6155;
+    }
+    .bg-navbar {
+      background-color: rgba(0, 0, 0, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+    }
+    .hero-overlay {
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.8) 100%);
+    }
+    .text-accent { color: #ff6f61; }
+    .bg-accent { background-color: #ff6f61; }
+    .border-accent { border-color: #ff6f61; }
+  </style>
+</head>
+<body class="bg-darkbg text-white min-h-screen overflow-x-hidden">
+
+  <!-- Navbar -->
+  <header class="sticky top-0 z-50 bg-navbar shadow-md">
+    <nav class="container mx-auto flex items-center justify-between py-4 px-4">
+      <a href="#home" class="flex items-center space-x-2 font-extrabold text-2xl text-accent tracking-tight">
+        <span class="rounded-full bg-accent px-3 py-1 text-darkbg font-black text-xl btn-glow">H</span>
+        <span>Hitsona <span class="text-accent">Fort Wayne</span></span>
+      </a>
+      <ul class="hidden md:flex space-x-8 font-semibold text-lg">
+        <li><a href="#about" class="hover:text-accent transition">About</a></li>
+        <li><a href="#features" class="hover:text-accent transition">Why Hitsona?</a></li>
+        <li><a href="#how" class="hover:text-accent transition">How It Works</a></li>
+        <li><a href="#gallery" class="hover:text-accent transition">Gallery</a></li>
+        <li><a href="#testimonials" class="hover:text-accent transition">Success Stories</a></li>
+        <li><a href="#faq" class="hover:text-accent transition">FAQ</a></li>
+        <li><a href="#contact" class="hover:text-accent transition">Contact</a></li>
+      </ul>
+      <button id="mobileNavToggle" class="md:hidden p-2 rounded hover:bg-accent/10 focus:outline-none">
+        <svg class="w-7 h-7 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </nav>
+    <div id="mobileNav" class="md:hidden hidden bg-navbar border-t border-accent/20">
+      <ul class="flex flex-col py-2 px-4 space-y-2 font-semibold text-lg">
+        <li><a href="#about" class="block py-2 hover:text-accent">About</a></li>
+        <li><a href="#features" class="block py-2 hover:text-accent">Why Hitsona?</a></li>
+        <li><a href="#how" class="block py-2 hover:text-accent">How It Works</a></li>
+        <li><a href="#gallery" class="block py-2 hover:text-accent">Gallery</a></li>
+        <li><a href="#testimonials" class="block py-2 hover:text-accent">Success Stories</a></li>
+        <li><a href="#faq" class="block py-2 hover:text-accent">FAQ</a></li>
+        <li><a href="#contact" class="block py-2 hover:text-accent">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="relative min-h-[70vh] flex items-center justify-center text-center overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=1400&q=80"
+         alt="Fitness Action"
+         class="absolute inset-0 w-full h-full object-cover object-center z-0">
+    <div class="absolute inset-0 hero-overlay z-10"></div>
+    <div class="relative z-20 container mx-auto px-4 py-28 flex flex-col items-center justify-center">
+      <h1 class="text-4xl md:text-6xl font-black text-white drop-shadow-lg mb-4 tracking-tight">
+        Best Gym Near You in Fort Wayne, IN
+      </h1>
+      <p class="text-xl md:text-2xl text-white font-semibold mb-8 drop-shadow-lg">
+        Lose Weight. Build Confidence. <span class="text-accent">Feel Amazing.</span>
+      </p>
+      <a href="#contact"
+         class="btn-glow inline-block bg-accent hover:bg-white hover:text-accent text-darkbg font-bold px-10 py-4 rounded-full text-lg shadow-lg transition">
+        Book Your Free Call
+      </a>
+      <p class="mt-8 text-white/90 text-sm font-medium"><i>5828 Challenger Parkway, Suite E, Fort Wayne, IN</i></p>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="container mx-auto px-4 py-20 flex flex-col md:flex-row items-center gap-10">
+    <div class="flex-1">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-accent mb-4">About Hitsona Fort Wayne</h2>
+      <div class="bg-glass p-8 rounded-2xl shadow-lg">
+        <p class="text-lg md:text-xl font-medium leading-relaxed">
+          Hitsona Fort Wayne is not your average gym. We offer group-based personal training in a supportive, non-intimidating environment—no mirrors, no egos, just real results. Our science-backed workouts help you lose weight, get stronger, and feel more confident, all while having fun and making friends in a motivating community.<br><br>
+          <span class="font-bold text-accent">Who is Hitsona for?</span><br>
+          <ul class="list-disc ml-6 mt-2 text-muted">
+            <li>People who dislike traditional big-box gyms</li>
+            <li>Anyone looking to lose weight, tone up, and boost energy</li>
+            <li>Those who want a supportive fitness community</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+    <div class="flex-1 flex justify-center items-center">
+      <img src="https://images.unsplash.com/photo-1579758629938-03607ccdbaba?auto=format&fit=crop&w=600&q=80"
+           alt="Modern Gym"
+           class="rounded-full btn-glow w-72 h-72 object-cover border-8 border-accent/40 bg-darkbg"
+           loading="lazy">
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section id="features" class="py-20 bg-gradient-to-br from-black via-zinc-900 to-darkbg">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center text-accent mb-14">Why Choose Hitsona?</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <div class="bg-glass rounded-3xl btn-glow p-8 flex flex-col items-center border-t-4 border-accent">
+          <h3 class="font-bold text-lg mb-1 text-accent">Lose Weight & Body Fat</h3>
+          <p class="text-muted text-center">Science-backed, high-intensity group workouts for real results.</p>
+        </div>
+        <div class="bg-glass rounded-3xl btn-glow p-8 flex flex-col items-center border-t-4 border-accent">
+          <h3 class="font-bold text-lg mb-1 text-accent">Look and Feel Slimmer</h3>
+          <p class="text-muted text-center">Sculpt, tone, and gain confidence in your body.</p>
+        </div>
+        <div class="bg-glass rounded-3xl btn-glow p-8 flex flex-col items-center border-t-4 border-accent">
+          <h3 class="font-bold text-lg mb-1 text-accent">No Mirrors, No Egos</h3>
+          <p class="text-muted text-center">Low-impact, community-focused workouts. Just results.</p>
+        </div>
+        <div class="bg-glass rounded-3xl btn-glow p-8 flex flex-col items-center border-t-4 border-accent">
+          <h3 class="font-bold text-lg mb-1 text-accent">Unlimited Personal Training</h3>
+          <p class="text-muted text-center">Get expert coaching without the high price tag.</p>
+        </div>
+        <div class="bg-glass rounded-3xl btn-glow p-8 flex flex-col items-center border-t-4 border-accent">
+          <h3 class="font-bold text-lg mb-1 text-accent">Make Exercise Fun</h3>
+          <p class="text-muted text-center">Enjoy working out and make new friends in every session.</p>
+        </div>
+        <div class="bg-glass rounded-3xl btn-glow p-8 flex flex-col items-center border-t-4 border-accent">
+          <h3 class="font-bold text-lg mb-1 text-accent">Unlimited Nutrition & Coaching</h3>
+          <p class="text-muted text-center">Get all the support you need for your journey.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section id="how" class="container mx-auto px-4 py-20">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center text-accent mb-14">How It Works</h2>
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 text-center">
+      <div class="bg-glass p-6 rounded-2xl">
+        <div class="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-accent rounded-full btn-glow text-darkbg text-2xl font-bold">1</div>
+        <h3 class="font-bold text-lg mb-1">Book Your Free Call</h3>
+        <p class="text-muted">Schedule a no-pressure chat and get your questions answered.</p>
+      </div>
+      <div class="bg-glass p-6 rounded-2xl">
+        <div class="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-accent rounded-full btn-glow text-darkbg text-2xl font-bold">2</div>
+        <h3 class="font-bold text-lg mb-1">Meet Your Coach</h3>
+        <p class="text-muted">Get a studio tour and personal welcome from your coach.</p>
+      </div>
+      <div class="bg-glass p-6 rounded-2xl">
+        <div class="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-accent rounded-full btn-glow text-darkbg text-2xl font-bold">3</div>
+        <h3 class="font-bold text-lg mb-1">Experience a Session</h3>
+        <p class="text-muted">Join a fun, instructor-led group workout (all levels welcome).</p>
+      </div>
+      <div class="bg-glass p-6 rounded-2xl">
+        <div class="mx-auto mb-4 w-16 h-16 flex items-center justify-center bg-accent rounded-full btn-glow text-darkbg text-2xl font-bold">4</div>
+        <h3 class="font-bold text-lg mb-1">Feel Amazing</h3>
+        <p class="text-muted">See results, make friends, and love your fitness journey!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="container mx-auto px-4 py-20">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center text-accent mb-12">Gallery</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+      <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=600&q=80"
+           alt="Modern gym with people on treadmills"
+           class="gallery-img rounded-2xl btn-glow object-cover w-full h-48 md:h-56">
+      <img src="https://images.unsplash.com/photo-1517838277536-f5f99be501cd?auto=format&fit=crop&w=600&q=80"
+           alt="Gym Gallery 2"
+           class="gallery-img rounded-2xl btn-glow object-cover w-full h-48 md:h-56">
+      <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600&q=80"
+           alt="Gym Gallery 3"
+           class="gallery-img rounded-2xl btn-glow object-cover w-full h-48 md:h-56">
+      <img src="https://images.unsplash.com/photo-1518459031867-a89b944bffe4?auto=format&fit=crop&w=600&q=80"
+           alt="Gym interior with people working out"
+           class="gallery-img rounded-2xl btn-glow object-cover w-full h-48 md:h-56">
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="relative py-20 bg-gradient-to-br from-black via-zinc-900 to-darkbg">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-center text-accent mb-14">Success Stories from Fort Wayne Members</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+        <blockquote class="bg-glass rounded-3xl btn-glow p-8 border-l-8 border-accent flex flex-col items-start">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Member testimonial" class="rounded-full w-16 h-16 border-4 border-accent/30 shadow-md mr-4" loading="lazy">
+            <span class="font-bold text-lg text-accent">Jessica R.</span>
+          </div>
+          <p class="italic text-white text-lg">
+            “I never thought I’d enjoy working out, but Hitsona changed that. I’ve lost weight, gained confidence, and actually look forward to going to the gym!”
+          </p>
+        </blockquote>
+        <blockquote class="bg-glass rounded-3xl btn-glow p-8 border-l-8 border-accent flex flex-col items-start">
+          <div class="flex items-center mb-4">
+            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Member testimonial" class="rounded-full w-16 h-16 border-4 border-accent/30 shadow-md mr-4" loading="lazy">
+            <span class="font-bold text-lg text-accent">Mike D.</span>
+          </div>
+          <p class="italic text-white text-lg">
+            “I lost 20 pounds in 3 months and made friends for life. Hitsona is not just a gym, it’s a family!”
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="container mx-auto px-4 py-20">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-center text-accent mb-12">Frequently Asked Questions</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="bg-glass rounded-2xl btn-glow p-6 border-l-4 border-accent">
+        <h3 class="font-bold text-lg mb-2 text-accent">What makes Hitsona different from big-box gyms?</h3>
+        <p class="text-white">Hitsona offers a non-intimidating, community-driven environment with guided workouts designed for real results. No machines, no mirrors—just expert coaching and support to help you succeed.</p>
+      </div>
+      <div class="bg-glass rounded-2xl btn-glow p-6 border-l-4 border-accent">
+        <h3 class="font-bold text-lg mb-2 text-accent">Do I need to be in shape to start?</h3>
+        <p class="text-white">Not at all! Our workouts are designed for all fitness levels, and our coaches will customize exercises to match your abilities and help you progress at your own pace.</p>
+      </div>
+      <div class="bg-glass rounded-2xl btn-glow p-6 border-l-4 border-accent">
+        <h3 class="font-bold text-lg mb-2 text-accent">What types of workouts do you offer?</h3>
+        <p class="text-white">We offer group-based personal training sessions focused on strength, fat loss, endurance, and overall health. Our workouts combine functional movements, resistance training, and cardio for maximum results.</p>
+      </div>
+      <div class="bg-glass rounded-2xl btn-glow p-6 border-l-4 border-accent">
+        <h3 class="font-bold text-lg mb-2 text-accent">Is nutrition support included?</h3>
+        <p class="text-white">Absolutely! All memberships include unlimited nutritional guidance and accountability coaching.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map" class="container mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-extrabold text-accent mb-6 text-center">Find Us in Fort Wayne</h2>
+    <div class="flex flex-col md:flex-row md:items-center md:justify-center gap-8">
+      <div class="flex-1 mb-8 md:mb-0">
+        <div class="rounded-3xl overflow-hidden btn-glow border-4 border-accent/30">
+          <iframe
+            title="Hitsona Fort Wayne Location"
+            src="https://www.google.com/maps?q=5828+Challenger+Parkway,+Suite+E,+Fort+Wayne,+IN+46818&output=embed"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            class="w-full h-[350px] md:h-[400px]">
+          </iframe>
+        </div>
+      </div>
+      <div class="flex-1 flex flex-col items-center justify-center text-center">
+        <h3 class="text-xl font-bold text-accent mb-2">Hitsona Fort Wayne</h3>
+        <p class="text-white mb-1">5828 Challenger Parkway, Suite E</p>
+        <p class="text-white mb-1">Fort Wayne, IN 46818</p>
+        <p class="text-white mb-1">Phone: <a href="tel:+12602542395" class="text-accent underline hover:text-white">(260) 254-2395</a></p>
+        <p class="text-white mb-4">Email: <a href="mailto:fortwayne@hitsona.com" class="text-accent underline hover:text-white">fortwayne@hitsona.com</a></p>
+        <a href="https://maps.app.goo.gl/6JkD6tqkT9KZt2zS8" target="_blank"
+           class="btn-glow bg-accent hover:bg-white hover:text-accent text-darkbg font-bold px-8 py-3 rounded-full shadow transition">
+          Open in Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section (COMPLETE, HIGH-VISIBILITY) -->
+  <footer id="contact" class="bg-navbar text-white py-12 mt-10">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div>
+        <h3 class="text-2xl font-black mb-2 text-accent">Hitsona Fort Wayne</h3>
+        <address class="not-italic text-white mb-1">
+          5828 Challenger Parkway, Suite E, Fort Wayne, IN 46818
+        </address>
+        <p class="text-white mb-1">Phone: <a href="tel:+12602542395" class="underline hover:text-accent">(260) 254-2395</a></p>
+        <p class="text-white">Email: <a href="mailto:fortwayne@hitsona.com" class="underline hover:text-accent">fortwayne@hitsona.com</a></p>
+      </div>
+      <div class="flex space-x-6" aria-label="Social links">
+        <a href="https://www.instagram.com/hitsonafortwayne" target="_blank" rel="noopener" aria-label="Instagram" class="text-accent hover:text-white text-2xl">
+          <!-- Instagram SVG -->
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M7.75 2h8.5A5.75 5.75 0 0 1 22 7.75v8.5A5.75 5.75 0 0 1 16.25 22h-8.5A5.75 5.75 0 0 1 2 16.25v-8.5A5.75 5.75 0 0 1 7.75 2zm0 1.5A4.25 4.25 0 0 0 3.5 7.75v8.5A4.25 4.25 0 0 0 7.75 20.5h8.5a4.25 4.25 0 0 0 4.25-4.25v-8.5A4.25 4.25 0 0 0 16.25 3.5zm4.25 2.75a5.75 5.75 0 1 1 0 11.5a5.75 5.75 0 0 1 0-11.5zm0 1.5a4.25 4.25 0 1 0 0 8.5a4.25 4.25 0 0 0 0-8.5zm5.25 1.25a1 1 0 1 1-2 0a1 1 0 0 1 2 0z"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61556442407202" target="_blank" rel="noopener" aria-label="Facebook" class="text-accent hover:text-white text-2xl">
+          <!-- Facebook SVG -->
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 5 3.657 9.127 8.438 9.876v-6.987h-2.54v-2.889h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.463h-1.261c-1.243 0-1.631.771-1.631 1.562v1.875h2.773l-.443 2.889h-2.33v6.987C18.343 21.127 22 17 22 12z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@hitsonafortwayne" target="_blank" rel="noopener" aria-label="YouTube" class="text-accent hover:text-white text-2xl">
+          <!-- YouTube SVG -->
+          <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M21.8 8.001a2.75 2.75 0 0 0-1.94-1.94C18.1 6 12 6 12 6s-6.1 0-7.86.061a2.75 2.75 0 0 0-1.94 1.94A28.7 28.7 0 0 0 2 12a28.7 28.7 0 0 0 .2 3.999 2.75 2.75 0 0 0 1.94 1.94C5.9 18 12 18 12 18s6.1 0 7.86-.061a2.75 2.75 0 0 0 1.94-1.94A28.7 28.7 0 0 0 22 12a28.7 28.7 0 0 0-.2-3.999zM10 15.5v-7l6 3.5-6 3.5z"/>
+          </svg>
+        </a>
+      </div>
+      <div class="flex flex-col items-center gap-2">
+        <a href="tel:+12602542395" class="btn-glow inline-block bg-accent hover:bg-white hover:text-accent text-darkbg font-bold px-6 py-3 rounded-full shadow transition">Call Now</a>
+        <a href="mailto:fortwayne@hitsona.com?subject=Free%20Trial%20Session%20Request" class="btn-glow inline-block bg-white hover:bg-accent text-accent font-bold px-6 py-3 rounded-full shadow transition">Try Free Session</a>
+      </div>
+    </div>
+    <div class="text-center text-white mt-8 text-sm">&copy; Hitsona Fort Wayne All Rights Reserved 2025</div>
+  </footer>
+
+  <!-- JS: Mobile Nav -->
+  <script>
+    const mobileNavToggle = document.getElementById('mobileNavToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    mobileNavToggle.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+    });
+    document.querySelectorAll('#mobileNav a').forEach(link => {
+      link.addEventListener('click', () => mobileNav.classList.add('hidden'));
+    });
+  </script>
+</body>
+</html>
